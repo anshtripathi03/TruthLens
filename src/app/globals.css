@@ -2,10 +2,10 @@
 
 :root {
   --bg-base: #060912;
-  --bg-card: rgba(255, 255, 255, 0.04);
-  --bg-card-hover: rgba(255, 255, 255, 0.07);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(139, 92, 246, 0.5);
+  --bg-card: #0d0d14;
+  --bg-card-hover: #111119;
+  --border: rgba(255, 255, 255, 0.10);
+  --border-hover: rgba(139, 92, 246, 0.55);
   --text-primary: #f1f5f9;
   --text-muted: #94a3b8;
   --text-faint: #475569;
@@ -72,18 +72,61 @@ html {
   color: #f1f5f9;
 }
 
-/* Glass card */
+/* ─── Glass Card ─────────────────────────────────────────────────────────────
+   Solid dark background so cards are clearly visible above the Vanta canvas.
+   On hover: border glows + box-shadow radiates outward like a shine effect.
+────────────────────────────────────────────────────────────────────────────── */
 .glass-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  position: relative;
+  background: #0d0d14;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 16px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.35s ease,
+    transform 0.2s ease;
+  overflow: hidden;
 }
+
+/* Shimmer sweep pseudo-element — slides across on hover */
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(139, 92, 246, 0.08) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  background-position: -200% 0;
+  transition: background-position 0.6s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glass-card:hover::before {
+  background-position: 200% 0;
+}
+
+/* Everything inside the card above the shimmer layer */
+.glass-card > * {
+  position: relative;
+  z-index: 1;
+}
+
 .glass-card:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--border-hover);
+  background: #111119;
+  border-color: rgba(139, 92, 246, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(139, 92, 246, 0.2),
+    0 0 20px rgba(139, 92, 246, 0.20),
+    0 0 55px rgba(139, 92, 246, 0.10),
+    0 8px 32px rgba(0, 0, 0, 0.8);
+  transform: translateY(-2px);
 }
 
 /* Gradient text */
@@ -109,7 +152,7 @@ html {
 .btn-primary:hover:not(:disabled) {
   opacity: 0.92;
   transform: translateY(-1px);
-  box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.45);
 }
 .btn-primary:active:not(:disabled) {
   transform: translateY(0);
@@ -120,18 +163,21 @@ html {
 }
 
 .btn-ghost {
-  background: transparent;
-  border: 1px solid var(--border);
+  background: #0d0d14;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 10px;
   color: var(--text-muted);
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.25s ease;
 }
 .btn-ghost:hover:not(:disabled) {
   border-color: var(--accent-violet);
   color: var(--text-primary);
-  background: var(--glow-violet);
+  background: rgba(139, 92, 246, 0.12);
+  box-shadow:
+    0 0 0 1px rgba(139, 92, 246, 0.2),
+    0 0 16px rgba(139, 92, 246, 0.2);
 }
 
 /* Glow orbs (decorative) */
@@ -214,15 +260,21 @@ html {
   animation: shimmer 1.5s infinite;
 }
 
-/* Drop zone */
+/* ─── Drop Zone ──────────────────────────────────────────────────────────────
+   Solid dark base so it's distinct, dashed violet border + glow on hover.
+────────────────────────────────────────────────────────────────────────────── */
 .drop-zone {
-  border: 2px dashed var(--border);
+  background: #0d0d14;
+  border: 2px dashed rgba(255, 255, 255, 0.14);
   border-radius: 16px;
-  transition: all 0.2s;
+  transition: all 0.25s ease;
   cursor: pointer;
 }
 .drop-zone:hover,
 .drop-zone.drag-over {
   border-color: var(--accent-violet);
-  background: var(--glow-violet);
+  background: #110f1e;
+  box-shadow:
+    0 0 0 1px rgba(139, 92, 246, 0.25),
+    0 0 30px rgba(139, 92, 246, 0.15);
 }

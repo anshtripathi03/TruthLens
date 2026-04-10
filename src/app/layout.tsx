@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import VantaBackground from "@/components/VantaBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,8 +30,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex flex-col min-h-full bg-[#060912] text-slate-100">
-        <Navbar />
-        <main className="flex-1">{children}</main>
+        {/* Vanta NET animation — fixed behind all content */}
+        <VantaBackground />
+
+        {/* All UI sits above the canvas via z-index */}
+        <div className="relative flex flex-col min-h-screen" style={{ zIndex: 1 }}>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+        </div>
       </body>
     </html>
   );
