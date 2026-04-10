@@ -82,7 +82,7 @@ export default function FileDropzone({
           <div className="mt-4 space-y-1">
             <div className="flex items-center gap-2 justify-center">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span className="text-sm font-semibold text-slate-100 truncate max-w-[260px]">
+              <span className="text-sm font-semibold text-slate-100 truncate">
                 {currentFile.name}
               </span>
             </div>

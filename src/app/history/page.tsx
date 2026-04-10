@@ -67,7 +67,7 @@ export default function HistoryPage() {
     });
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div className="px-4 sm:px-6 py-12">
       {/* Header */}
       <div className="mb-8">
         <div className="inline-flex items-center gap-2 text-xs font-medium text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3 py-1 rounded-full mb-4">
@@ -183,7 +183,7 @@ export default function HistoryPage() {
                         className="border-b border-white/[0.04] hover:bg-white/[0.02] transition-colors"
                       >
                         <td className="px-4 py-3">
-                          <p className="text-slate-200 truncate max-w-[180px] font-medium">
+                          <p className="text-slate-200 truncate font-medium">
                             {record.filename}
                           </p>
                           <p className="text-xs text-slate-600 font-mono truncate">

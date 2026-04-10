@@ -10,7 +10,7 @@ export default function VideoDetectPage() {
   const { detect, result, loading, error } = useDetectVideo();
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <div className="px-4 sm:px-6 py-12">
       <div className="mb-8">
         <div className="inline-flex items-center gap-2 text-xs font-medium text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3 py-1 rounded-full mb-4">
           🎬 Video Detection

@@ -84,9 +84,9 @@ export default function HomePage() {
       <div className="bg-glow-violet top-[-100px] left-[-100px]" />
       <div className="bg-glow-cyan bottom-[10%] right-[-80px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="px-4 sm:px-6 lg:px-8 py-16">
         {/* Hero */}
-        <div className="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+        <div className="text-center mb-16 fade-in-up">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-semibold mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-violet-400 pulse-dot" />
             Powered by DeepTrace ML Engine
@@ -97,7 +97,7 @@ export default function HomePage() {
             <span className="text-slate-100">Lens</span>
           </h1>
 
-          <p className="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg text-slate-400 leading-relaxed">
             Advanced AI-powered deepfake detection for images, videos, and audio.
             Upload any media file and get instant analysis with confidence scores,
             artifact signatures, and provenance data.
