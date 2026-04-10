@@ -15,7 +15,7 @@ export default function AutoDetectPage() {
   };
 
   return (
-    <div className="px-4 sm:px-6 py-12">
+    <div className="px-4 sm:px-6 max-w-7xl mx-auto py-12">
       <div className="mb-8">
         <div className="inline-flex items-center gap-2 text-xs font-medium text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3 py-1 rounded-full mb-4">
           🤖 Auto Detect

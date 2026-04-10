@@ -26,7 +26,7 @@ export default function HistoryRecordPage() {
 
   if (loading) {
     return (
-      <div className="px-4 sm:px-6 py-12">
+      <div className="px-4 sm:px-6 max-w-7xl mx-auto py-12">
         <div className="space-y-4">
           {[1, 2, 3].map((i) => (
             <div key={i} className="glass-card p-6 h-24 shimmer" />
@@ -38,7 +38,7 @@ export default function HistoryRecordPage() {
 
   if (error) {
     return (
-      <div className="px-4 sm:px-6 py-12">
+      <div className="px-4 sm:px-6 max-w-7xl mx-auto py-12">
         <div className="glass-card p-6 border-red-500/30 bg-red-500/5 text-red-400 text-sm">
           ❌ {error}
         </div>
@@ -52,7 +52,7 @@ export default function HistoryRecordPage() {
   if (!record) return null;
 
   return (
-    <div className="px-4 sm:px-6 py-12 fade-in-up">
+    <div className="px-4 sm:px-6 max-w-7xl mx-auto py-12 fade-in-up">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-slate-600 mb-6">
         <Link href="/history" className="hover:text-violet-400 transition-colors">History</Link>

@@ -79,7 +79,7 @@ export default function HomePage() {
     : null;
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen max-w-7xl mx-auto overflow-hidden">
       {/* Decorative orbs */}
       <div className="bg-glow-violet top-[-100px] left-[-100px]" />
       <div className="bg-glow-cyan bottom-[10%] right-[-80px]" />

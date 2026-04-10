@@ -10,7 +10,7 @@ export default function ImageDetectPage() {
   const { detect, result, loading, error } = useDetectImage();
 
   return (
-    <div className="px-4 sm:px-6 py-12">
+    <div className="px-4 sm:px-6 max-w-7xl mx-auto py-12">
       <div className="mb-8">
         <div className="inline-flex items-center gap-2 text-xs font-medium text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full mb-4">
           🖼️ Image Detection
