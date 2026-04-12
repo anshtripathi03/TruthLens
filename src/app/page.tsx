@@ -89,7 +89,7 @@ export default function HomePage() {
         <div className="text-center mb-16 fade-in-up">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-semibold mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-violet-400 pulse-dot" />
-            Powered by DeepTrace ML Engine
+            Powered by Truth-Lens ML Engine
           </div>
 
           <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-5">

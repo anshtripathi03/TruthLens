@@ -27,9 +27,9 @@ export default function VantaBackground() {
             scaleMobile: 1.0,
             color: 0x3f62ff,
             backgroundColor: 0x060912, // matches TruthLens body bg
-            points: 8,
-            maxDistance: 21,
-            spacing: 15,
+            points: 12.00,
+            maxDistance: 22.00,
+            spacing: 16.00,
             showDots: true,
           });
         } catch (err) {
